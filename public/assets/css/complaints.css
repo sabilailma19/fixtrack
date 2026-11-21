@@ -1,0 +1,1182 @@
+
+/* =====================================
+   HALAMAN PENGADUAN
+===================================== */
+
+.complaint-heading {
+    margin-bottom: 22px;
+}
+
+.complaint-heading h2 {
+    font-size: 19px;
+}
+
+.complaint-heading p,
+.complaint-table-heading p {
+    color: #64748b;
+    font-size: 11px;
+    margin-top: 7px;
+}
+
+.complaint-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.complaint-summary-card {
+    background: white;
+    border: 1px solid #e8edf4;
+    border-radius: 11px;
+    padding: 19px;
+}
+
+.complaint-summary-card span {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.complaint-summary-card h2 {
+    font-size: 26px;
+    margin-top: 9px;
+}
+
+.summary-icon {
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    margin-bottom: 13px;
+}
+
+.summary-icon.blue {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.summary-icon.orange {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.summary-icon.purple {
+    background: #f5f3ff;
+    color: #7c3aed;
+}
+
+.summary-icon.green {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+/* =====================================
+   TABEL PENGADUAN
+===================================== */
+
+.complaint-table-card {
+    padding: 23px;
+}
+
+.complaint-table-heading h3 {
+    font-size: 15px;
+}
+
+.complaint-tools {
+    display: flex;
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.complaint-search {
+    flex: 1;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #64748b;
+}
+
+.complaint-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 11px;
+}
+
+.complaint-tools select {
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    font-family: inherit;
+    font-size: 11px;
+}
+
+.complaint-table {
+    width: 100%;
+    min-width: 1050px;
+    border-collapse: collapse;
+}
+
+.complaint-table th {
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 10px;
+    text-align: left;
+    padding: 14px 11px;
+}
+
+.complaint-table td {
+    padding: 14px 11px;
+    border-bottom: 1px solid #edf1f6;
+    font-size: 11px;
+}
+
+.complaint-subtitle {
+    font-size: 10px;
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+.complaint-status {
+    display: inline-block;
+    padding: 6px 9px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.complaint-status.menunggu_verifikasi {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.complaint-status.diverifikasi {
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.complaint-status.ditolak {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.complaint-status.ditugaskan {
+    background: #f5f3ff;
+    color: #6d28d9;
+}
+
+.complaint-status.diproses {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.complaint-status.selesai {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.complaint-action {
+    background: #eff6ff;
+    color: #2563eb;
+    border: none;
+    border-radius: 7px;
+    padding: 8px 11px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.complaint-action:hover {
+    background: #dbeafe;
+}
+
+.complaint-alert {
+    padding: 13px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+.complaint-alert.success {
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+.complaint-alert.error {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.complaint-empty {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+/* =====================================
+   MODAL DETAIL PENGADUAN
+===================================== */
+
+.complaint-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.58);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 100;
+}
+
+.complaint-modal-overlay.show {
+    display: flex;
+}
+
+.complaint-modal {
+    width: 100%;
+    max-width: 650px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+    animation: modalAppear 0.2s ease;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.complaint-modal-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 22px;
+    background: white;
+    border-bottom: 1px solid #e8edf4;
+}
+
+.complaint-modal-header h2 {
+    font-size: 17px;
+    color: #1e293b;
+}
+
+.complaint-modal-header p {
+    color: #64748b;
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+.complaint-modal-header button {
+    flex-shrink: 0;
+    width: 33px;
+    height: 33px;
+    border: none;
+    border-radius: 8px;
+    background: #f1f5f9;
+    color: #475569;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.complaint-modal-header button:hover {
+    background: #e2e8f0;
+}
+
+.complaint-modal-body {
+    padding: 22px;
+    display: grid;
+    gap: 18px;
+}
+
+/* Baris informasi dasar */
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    font-size: 12px;
+}
+
+.detail-row span {
+    color: #64748b;
+    flex-shrink: 0;
+}
+
+.detail-row strong {
+    color: #1e293b;
+    text-align: right;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+/* Deskripsi pengaduan */
+
+.detail-description {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.detail-description span {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.detail-description p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #334155;
+    overflow-wrap: anywhere;
+}
+
+/* Foto kerusakan */
+
+#detailPhotoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#detailPhotoContainer > span {
+    color: #64748b;
+    font-size: 12px;
+}
+
+#detailPhoto {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    object-position: left center;
+    border-radius: 9px;
+    background: #f8fafc;
+}
+
+/* Catatan admin */
+
+#detailNoteContainer {
+    padding: 14px 15px;
+    background: #f8fafc;
+    border: 1px solid #e8edf4;
+    border-radius: 9px;
+}
+
+#detailNoteContainer > span {
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+#detailNote {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #334155;
+    overflow-wrap: anywhere;
+}
+
+/* =====================================
+   INFORMASI PENUGASAN
+   Berlaku jika elemen HTML menggunakan
+   class assignment-detail-section
+===================================== */
+
+.assignment-detail-section {
+    padding: 16px;
+    background: #f8fafc;
+    border: 1px solid #e8edf4;
+    border-radius: 10px;
+}
+
+.assignment-detail-section h3 {
+    font-size: 13px;
+    color: #1e293b;
+    margin-bottom: 14px;
+}
+
+.assignment-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.assignment-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.assignment-detail-item span {
+    font-size: 10px;
+    color: #64748b;
+}
+
+.assignment-detail-item strong {
+    font-size: 12px;
+    color: #1e293b;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+/* Catatan penyelesaian petugas */
+
+.assignment-completion-note {
+    margin-top: 15px;
+    padding: 13px;
+    background: white;
+    border: 1px solid #e8edf4;
+    border-radius: 8px;
+}
+
+.assignment-completion-note span {
+    font-size: 10px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.assignment-completion-note p {
+    margin-top: 7px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #334155;
+    overflow-wrap: anywhere;
+}
+
+/* =====================================
+   FOOTER MODAL
+===================================== */
+
+.complaint-modal-footer {
+    padding: 18px 22px;
+    border-top: 1px solid #e8edf4;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: white;
+}
+
+.complaint-modal-footer form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.complaint-modal-footer input {
+    flex: 1;
+    min-width: 160px;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 7px;
+    font-size: 11px;
+}
+
+.btn-verify,
+.btn-reject {
+    border: none;
+    border-radius: 7px;
+    padding: 10px 13px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.btn-verify {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-verify:hover {
+    background: #1d4ed8;
+}
+
+.btn-reject {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.btn-reject:hover {
+    background: #fecaca;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1100px) {
+    .complaint-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .complaint-tools {
+        flex-wrap: wrap;
+    }
+
+    .complaint-search {
+        flex-basis: 100%;
+    }
+
+    .complaint-tools select {
+        flex: 1;
+    }
+
+    .complaint-modal-overlay {
+        padding: 10px;
+    }
+
+    .complaint-modal {
+        max-height: 94vh;
+    }
+
+    .complaint-modal-header,
+    .complaint-modal-body,
+    .complaint-modal-footer {
+        padding: 16px;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .detail-row strong {
+        text-align: left;
+    }
+}
+
+@media (max-width: 450px) {
+    .complaint-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .assignment-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================
+   DETAIL INFORMASI PENUGASAN
+========================================== */
+
+.assignment-detail-section {
+    margin-top: 8px;
+    padding: 20px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.assignment-detail-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 18px;
+}
+
+.assignment-detail-section h3 i {
+    color: #2563eb;
+    font-size: 18px;
+}
+
+.assignment-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.assignment-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 13px;
+    background: #ffffff;
+    border: 1px solid #e8edf4;
+    border-radius: 9px;
+    min-width: 0;
+}
+
+.assignment-detail-item span,
+.assignment-completion-note span {
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.assignment-detail-item strong {
+    color: #1e293b;
+    font-size: 12px;
+    font-weight: 650;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* STATUS PENUGASAN */
+
+#detailAssignmentStatus {
+    display: inline-block;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+/* CATATAN ADMIN DAN PETUGAS */
+
+.assignment-completion-note {
+    margin-top: 14px;
+    padding: 14px;
+    background: #ffffff;
+    border: 1px solid #e8edf4;
+    border-radius: 9px;
+}
+
+.assignment-completion-note p {
+    margin-top: 8px;
+    color: #334155;
+    font-size: 12px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+    .assignment-detail-section {
+        padding: 14px;
+    }
+
+    .assignment-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =====================================
+   INFORMASI PENUGASAN PADA DETAIL MODAL
+===================================== */
+
+.assignment-detail-section {
+    border-top: 1px solid #e8edf4;
+    margin-top: 8px;
+    padding-top: 20px;
+}
+
+.assignment-detail-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 15px;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+.assignment-detail-section h3 i {
+    color: #2563eb;
+    font-size: 18px;
+}
+
+.assignment-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.assignment-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 13px;
+    background: #f8fafc;
+    border: 1px solid #e8edf4;
+    border-radius: 9px;
+    min-width: 0;
+}
+
+.assignment-detail-item span,
+.assignment-completion-note span {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.assignment-detail-item strong {
+    font-size: 12px;
+    color: #1e293b;
+    overflow-wrap: anywhere;
+}
+
+.assignment-completion-note {
+    margin-top: 13px;
+    padding: 14px;
+    background: #f8fafc;
+    border: 1px solid #e8edf4;
+    border-radius: 9px;
+}
+
+.assignment-completion-note p {
+    margin-top: 8px;
+    color: #334155;
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.complaint-modal-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: white;
+}
+
+@media (max-width: 500px) {
+    .assignment-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   FIXTRACK - MODAL DETAIL PENGADUAN
+========================================= */
+
+.complaint-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(15, 23, 42, 0.58);
+    backdrop-filter: blur(3px);
+}
+
+.complaint-modal-overlay.show {
+    display: flex;
+}
+
+.complaint-modal {
+    width: 100%;
+    max-width: 760px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e8edf4;
+    border-radius: 16px;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.22);
+    animation: modalFadeIn 0.2s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HEADER */
+
+.complaint-modal-header {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 26px;
+    background: #ffffff;
+    border-bottom: 1px solid #edf1f6;
+}
+
+.modal-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.modal-title-icon {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 18px;
+}
+
+.complaint-modal-header h2 {
+    color: #172554;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.modal-code {
+    margin-top: 6px;
+    margin-left: 52px;
+    color: #64748b;
+    font-size: 11px;
+}
+
+.modal-close {
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border: none;
+    border-radius: 9px;
+    background: #f1f5f9;
+    color: #64748b;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-close:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* BODY */
+
+.complaint-modal-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modal-section {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.modal-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.modal-section-heading i {
+    color: #2563eb;
+    font-size: 16px;
+}
+
+.modal-section-heading h3 {
+    color: #1e293b;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* INFORMASI GRID */
+
+.complaint-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.info-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px;
+    border: 1px solid #e8edf4;
+    border-radius: 10px;
+    background: #fbfdff;
+}
+
+.info-card span {
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.info-card strong {
+    color: #1e293b;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* DESKRIPSI */
+
+.description-card {
+    padding: 16px;
+    border: 1px solid #e8edf4;
+    border-radius: 10px;
+    background: #fbfdff;
+}
+
+.description-card p {
+    color: #334155;
+    font-size: 12px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* FOTO */
+
+.photo-card {
+    padding: 12px;
+    border: 1px solid #e8edf4;
+    border-radius: 11px;
+    background: #f8fafc;
+}
+
+#detailPhoto {
+    display: block;
+    max-width: 100%;
+    max-height: 320px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+/* CATATAN */
+
+.note-card {
+    padding: 15px;
+    border: 1px solid #e8edf4;
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+.note-card p {
+    margin-top: 9px;
+    color: #334155;
+    font-size: 12px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.admin-note-card {
+    border-left: 3px solid #2563eb;
+}
+
+/* PENUGASAN */
+
+.assignment-detail-section {
+    padding-top: 20px;
+    border-top: 1px solid #edf1f6;
+}
+
+.assignment-grid {
+    margin-top: 2px;
+}
+
+.assignment-status-text {
+    display: inline-flex;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #eff6ff;
+    color: #1d4ed8 !important;
+    font-size: 10px !important;
+}
+
+.assignment-note-card {
+    margin-top: 13px;
+    border-left: 3px solid #64748b;
+}
+
+.completion-note-card {
+    margin-top: 0;
+    border-left: 3px solid #16a34a;
+}
+
+.assignment-note-card > div,
+.completion-note-card > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.assignment-note-card > div i {
+    color: #64748b;
+}
+
+.completion-note-card > div i {
+    color: #16a34a;
+}
+
+.assignment-note-card > div span,
+.completion-note-card > div span {
+    color: #475569;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* FOOTER */
+
+.complaint-modal-footer {
+    flex-shrink: 0;
+    padding: 20px 26px;
+    border-top: 1px solid #edf1f6;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-footer-heading h3 {
+    color: #1e293b;
+    font-size: 13px;
+}
+
+.modal-footer-heading p {
+    margin-top: 5px;
+    color: #64748b;
+    font-size: 11px;
+}
+
+.modal-action-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-action-form input {
+    flex: 1;
+    min-width: 0;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+    font-size: 11px;
+}
+
+.modal-action-form input:focus {
+    border-color: #93c5fd;
+    box-shadow: 0 0 0 3px #eff6ff;
+}
+
+.btn-verify,
+.btn-reject {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    height: 40px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-verify {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-verify:hover {
+    background: #1d4ed8;
+}
+
+.btn-reject {
+    background: #fff1f2;
+    color: #be123c;
+}
+
+.btn-reject:hover {
+    background: #ffe4e6;
+}
+
+/* SCROLLBAR */
+
+.complaint-modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.complaint-modal-body::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+    .complaint-modal-overlay {
+        padding: 10px;
+    }
+
+    .complaint-modal {
+        max-height: 94vh;
+    }
+
+    .complaint-modal-header,
+    .complaint-modal-body,
+    .complaint-modal-footer {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .complaint-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-action-form {
+        flex-wrap: wrap;
+    }
+
+    .modal-action-form input {
+        flex-basis: 100%;
+    }
+
+    .modal-action-form button {
+        flex: 1;
+    }
+}
