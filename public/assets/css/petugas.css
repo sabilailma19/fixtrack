@@ -623,3 +623,300 @@ th {
 }
 
 
+/* ==========================================
+   FIXTRACK - MODAL DETAIL PENGADUAN
+========================================== */
+
+/* Background overlay */
+#detailModal.modal,
+#completionModal.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(15, 23, 42, 0.58);
+    backdrop-filter: blur(3px);
+    overflow-y: auto;
+}
+
+#detailModal.modal.show,
+#completionModal.modal.show {
+    display: flex;
+}
+
+/* Kotak modal */
+#detailModal .modal-content {
+    width: 100%;
+    max-width: 780px;
+    max-height: 88vh;
+    padding: 0;
+    margin: auto;
+    overflow-y: auto;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.20);
+    animation: detailModalIn 0.22s ease;
+}
+
+@keyframes detailModalIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+#detailModal .modal-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 23px 28px;
+    margin: 0;
+    background: #ffffff;
+    border-bottom: 1px solid #e8edf4;
+}
+
+#detailModal .modal-header h2 {
+    color: #172554;
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0;
+}
+
+#detailModal .modal-header p {
+    margin-top: 6px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+#detailModal .close-modal {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 9px;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 23px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#detailModal .close-modal:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Isi detail */
+#detailModal .detail-body {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    padding: 25px 28px 28px;
+}
+
+/* Kartu informasi */
+#detailModal .detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    padding: 15px 17px;
+    background: #f8fafc;
+    border: 1px solid #e8edf4;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+#detailModal .detail-item:hover {
+    background: #f1f5f9;
+}
+
+#detailModal .detail-item span {
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+#detailModal .detail-item strong {
+    color: #1e293b;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* Informasi panjang memenuhi lebar */
+#detailModal .detail-item.full {
+    grid-column: 1 / -1;
+}
+
+#detailModal .detail-item p {
+    margin: 0;
+    color: #334155;
+    font-size: 12px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+/* Status */
+#detailModal #detailStatus {
+    display: inline-block;
+    width: fit-content;
+    padding: 6px 11px;
+    border-radius: 20px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* Foto kerusakan */
+#detailModal #detailPhoto {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 340px;
+    margin-top: 5px;
+    object-fit: contain;
+    object-position: left center;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+#detailModal #noPhoto {
+    color: #94a3b8;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* Scrollbar */
+#detailModal .modal-content::-webkit-scrollbar {
+    width: 7px;
+}
+
+#detailModal .modal-content::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+#detailModal .modal-content::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+/* ==========================================
+   MODAL PENYELESAIAN TUGAS
+========================================== */
+
+#completionModal .modal-content {
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    padding: 25px;
+    margin: auto;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.20);
+}
+
+#completionModal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e8edf4;
+}
+
+#completionModal .modal-header h2 {
+    color: #172554;
+    font-size: 19px;
+}
+
+#completionModal .modal-header p {
+    margin-top: 6px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+#completionModal .close-modal {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 9px;
+    background: #f1f5f9;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+#completionModal textarea {
+    width: 100%;
+    min-height: 130px;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+    resize: vertical;
+}
+
+#completionModal textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* ==========================================
+   RESPONSIVE MODAL
+========================================== */
+
+@media (max-width: 650px) {
+    #detailModal.modal,
+    #completionModal.modal {
+        padding: 12px;
+    }
+
+    #detailModal .modal-content {
+        max-height: 94vh;
+    }
+
+    #detailModal .modal-header {
+        padding: 18px;
+    }
+
+    #detailModal .detail-body {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        gap: 11px;
+    }
+
+    #detailModal .detail-item.full {
+        grid-column: auto;
+    }
+
+    #completionModal .modal-content {
+        padding: 18px;
+    }
+}
+
+
+
