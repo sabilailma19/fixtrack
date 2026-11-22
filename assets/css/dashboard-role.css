@@ -1,0 +1,265 @@
+/* Layout mengikuti dashboard admin */
+
+.role-dashboard .sidebar {
+    overflow-y: auto;
+}
+
+.role-dashboard .main-content {
+    padding: 0;
+}
+
+.role-dashboard .topbar {
+    margin-bottom: 0;
+}
+
+.role-dashboard .topbar h1 {
+    margin-bottom: 0;
+}
+
+.role-dashboard .sidebar-menu .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: #94a3b8;
+    padding: 13px 14px;
+    border-radius: 9px;
+}
+
+.role-dashboard .sidebar-menu .menu-item:hover,
+.role-dashboard .sidebar-menu .menu-item.active {
+    background: #2563eb;
+    color: white;
+}
+
+.role-dashboard .avatar {
+    flex-shrink: 0;
+}
+
+.role-dashboard .profile-info strong {
+    overflow-wrap: anywhere;
+}
+
+.role-dashboard .stat-card {
+    box-shadow: none;
+}
+
+/* Tombol pada banner */
+
+.banner-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+    padding: 11px 16px;
+    background: white;
+    color: #1d4ed8;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.banner-action:hover {
+    background: #eff6ff;
+}
+
+.primary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Ringkasan status */
+
+.status-summary {
+    display: grid;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.status-row>div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.status-row progress {
+    width: 100%;
+    height: 8px;
+    border: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    accent-color: #2563eb;
+}
+
+.status-row progress::-webkit-progress-bar {
+    background: #eff6ff;
+    border-radius: 8px;
+}
+
+.status-row progress::-webkit-progress-value {
+    background: #2563eb;
+    border-radius: 8px;
+}
+
+.status-row progress::-moz-progress-bar {
+    background: #2563eb;
+    border-radius: 8px;
+}
+
+.role-guidance {
+    margin: 22px 0;
+    font-size: 12px;
+    line-height: 1.9;
+    color: #64748b;
+}
+
+.role-muted {
+    color: #64748b;
+    font-size: 12px;
+}
+
+/* Notifikasi */
+
+.role-alert {
+    margin-top: 20px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.role-alert.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.role-alert.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Daftar tugas dan pengaduan */
+
+.role-dashboard .task-section {
+    box-shadow: none;
+}
+
+.role-dashboard .task-section>.section-heading {
+    margin: 0 0 20px;
+}
+
+.role-dashboard .task-section .section-heading h2 {
+    font-size: 15px;
+}
+
+.role-dashboard .table-wrapper {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.role-dashboard table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+}
+
+.role-dashboard th,
+.role-dashboard td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e8edf4;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.role-dashboard th {
+    background: #f8fafc;
+    color: #64748b;
+}
+
+.role-dashboard .actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.role-dashboard .btn {
+    font-family: inherit;
+    font-size: 11px;
+}
+
+.role-dashboard .status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: #e2e8f0;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.role-dashboard .status.menunggu_verifikasi,
+.role-dashboard .status.ditugaskan {
+    background: #fff7ed;
+    color: #9a3412;
+}
+
+.role-dashboard .status.diverifikasi,
+.role-dashboard .status.diterima {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.role-dashboard .status.diproses {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.role-dashboard .status.selesai {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.role-dashboard .status.ditolak,
+.role-dashboard .status.dibatalkan {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.role-dashboard :focus-visible {
+    outline: 3px solid #60a5fa;
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .role-dashboard .sidebar-menu .menu-item {
+        justify-content: center;
+        padding: 14px 5px;
+    }
+
+    .role-dashboard .sidebar .logout-link {
+        display: flex;
+        justify-content: center;
+    }
+
+    .role-dashboard .logout-link span {
+        display: none;
+    }
+
+    .role-dashboard .topbar h1 {
+        font-size: 16px;
+    }
+
+    .role-dashboard .card-heading {
+        flex-wrap: wrap;
+    }
+
+    .role-dashboard .modal {
+        padding: 12px;
+    }
+}
